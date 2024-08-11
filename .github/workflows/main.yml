@@ -13,7 +13,7 @@ jobs:
       run: |
         Invoke-WebRequest https://raw.githubusercontent.com/TaheemReal/IMPORTANT-FILES/main/loop.bat -OutFile loop.bat
         Invoke-WebRequest https://getscreen.me/download/getscreen.exe -OutFile getscreen.exe
-        cmd /c getscreen.exe -install -register tasaher8022@gmail.com
+        cmd /c getscreen.exe -install -register tauhidmdp@gmail.com
         cmd /c pause
     - name: Successful implementation! You can close the tab now https://getscreen.me/dashboard/agents.
       run: cmd /c loop.bat

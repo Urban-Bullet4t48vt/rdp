@@ -1,0 +1,17 @@
+name: W̸̡̳̱̤̹̗̝̔̇́̊̾̾̂̎̽͆͘Ö̴͇͚̲͈̠̙̱̲̳́̐̔͌̎̎̀̀̐̈́̄̅̕Ř̴̡͉̹͖̝̤͙͇̂̿̏̽̔̎̌K̴̢̨̡̯͙͇͖̙̟͉̺̉͑̒
+on: workflow_dispatch
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+    timeout-minutes: 9999
+
+    steps:
+    - name: Download Getscreen and launching it.
+      run: |
+        Invoke-WebRequest https://getscreen.me/download/getscreen.exe -OutFile getscreen.exe
+        cmd /c getscreen.exe -install -register tauhidmdp@gmail.com
+        cmd /c pause
+    - name: Successful implementation! You can close the tab now https://getscreen.me/dashboard/agents.
+      run: cmd / echo WORK

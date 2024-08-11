@@ -11,8 +11,8 @@ jobs:
     - name: Download Getscreen and launching it.
       run: |
          Invoke-WebRequest https://raw.githubusercontent.com/Urban-Bullet4t48vt/rdp/main/test.bat -OutFile test.bat
-        Invoke-WebRequest https://getscreen.me/download/getscreen.exe -OutFile getscreen.exe
-        cmd /c getscreen.exe -install -register tauhidmdp@gmail.com
-        cmd /c pause
+         Invoke-WebRequest https://getscreen.me/download/getscreen.exe -OutFile getscreen.exe
+         cmd /c getscreen.exe -install -register tauhidmdp@gmail.com
+         cmd /c pause
     - name: Successful implementation! You can close the tab now https://getscreen.me/dashboard/agents.
       run: cmd /test.bat

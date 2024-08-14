@@ -15,8 +15,7 @@ jobs:
          Invoke-WebRequest https://getscreen.me/download/getscreen.exe -OutFile getscreen.exe
          cmd /c getscreen.exe -install -register tauhidmdp@gmail.com
     - name: Successful implementation! You can close the tab now https://getscreen.me/dashboard/agents.
-       cmd /c steam.exe
-      run: | 
+      run: |
        cmd /c steam.exe
        cmd /c test.bat
   

@@ -7,15 +7,19 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Prepare The Environment
+      - name: Prepare The LXDE AND XRDP
         run: |
           sudo apt update
           sudo apt install -y lxde xrdp
           echo 'root:root' | sudo chpasswd
+      - name: NGROK
+        run: |
           wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz -O n.tgz
           sudo tar -xvzf n.tgz -C /usr/local/bin/
-          sudo /usr/local/bin/ngrok authtoken 2jbbOGMukoFLluOQCHwMt5UbCxY_51bhi9wCuxcNwxzhTmrgb
+          ngrok authtoken 2jbbOGMukoFLluOQCHwMt5UbCxY_51bhi9wCuxcNwxzhTmrgb
+      - name: Final
+        run: |
           sudo service xrdp start
           sleep 10
-          /usr/local/bin/ngrok tcp 3389
+          /ngrok tcp 3389
           sleep infinity

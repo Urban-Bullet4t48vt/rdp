@@ -1,0 +1,14 @@
+name: Linux
+runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v2
+          - name: Prepare The Environment
+            run: |
+            sudo apt update
+            sudo su
+            echo 'root:root' | sudo chpasswd
+            apt install lxde & xrdp
+            wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz -O n.tgz
+            sudo tar -xvzf n.tgz
+            ./ngrok authtoken 2jbbOGMukoFLluOQCHwMt5UbCxY_51bhi9wCuxcNwxzhTmrgb
+            service xrdp start & sleep 10 & ./ngrok tcp 3389

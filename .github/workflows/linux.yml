@@ -14,12 +14,15 @@ jobs:
           echo 'root:root' | sudo chpasswd
       - name: NGROK
         run: |
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz -O n.tgz
           sudo tar -xvzf n.tgz
+          sudo dpkg -i google-chrome-stable_current_amd64.deb
           ./ngrok authtoken 2jbbOGMukoFLluOQCHwMt5UbCxY_51bhi9wCuxcNwxzhTmrgb
       - name: Final
         run: |
           sudo service xrdp start
           sleep 10
           ./ngrok tcp 3389
-          sleep infinity
+          sudo apt -f install
+          SECONDS=0; while true; do echo $SECONDS; sleep 1; done
